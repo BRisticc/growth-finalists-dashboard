@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Growth (GTM) Finalists &middot; Profitable Media</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0B1411;            /* near-black, green-tinted, echoes the site hero */
+    --bg2:#0f1a16;
+    --card:#13211C;
+    --card2:#16271f;
+    --line:#22362e;
+    --green:#25D98C;         /* bright profit-green accent */
+    --green-d:#16A56A;
+    --green-deep:#1F6F54;
+    --ink:#EAF2ED;
+    --muted:#9DB2A8;
+    --muted2:#6f8579;
+    --gold:#E3B04B;
+    --violet:#8B7BF0;--red:#E5674E;--blue:#4FA8D8;--amber:#E0A93C;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--ink);
+       padding:0 0 60px;line-height:1.5;-webkit-font-smoothing:antialiased;
+       background-image:radial-gradient(1200px 500px at 80% -10%,rgba(37,217,140,.10),transparent 60%);}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 26px;}
+
+  /* Hero band */
+  .hero{padding:40px 0 30px;border-bottom:1px solid var(--line);}
+  .brand{display:flex;align-items:center;gap:11px;margin-bottom:26px;}
+  .logo{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--green),var(--green-deep));
+        display:grid;place-items:center;font-family:'Sora';font-weight:800;color:#06110c;font-size:17px;box-shadow:0 6px 18px rgba(37,217,140,.28);}
+  .brand .nm{font-family:'Sora';font-weight:700;font-size:15px;letter-spacing:.2px;}
+  .brand .nm span{color:var(--green);}
+  .kicker{font-family:'Inter';font-weight:600;font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:var(--green);margin-bottom:10px;}
+  h1{font-family:'Sora';font-weight:800;font-size:40px;line-height:1.06;letter-spacing:-1px;max-width:760px;}
+  h1 em{font-style:normal;color:var(--green);}
+  .sub{color:var(--muted);font-size:15px;margin-top:16px;max-width:720px;}
+  .meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px;font-size:12px;}
+  .chip{background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 13px;color:var(--muted);}
+  .chip b{color:var(--ink);font-weight:600;}
+
+  /* Cards */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:34px;}
+  @media(max-width:940px){.grid{grid-template-columns:1fr;} h1{font-size:30px;}}
+  .card{background:linear-gradient(180deg,var(--card2),var(--card));border:1px solid var(--line);border-radius:18px;
+        padding:24px 22px 22px;display:flex;flex-direction:column;position:relative;overflow:hidden;
+        transition:transform .15s,border-color .15s,box-shadow .15s;}
+  .card:hover{transform:translateY(-3px);border-color:#2f4a3e;box-shadow:0 16px 40px rgba(0,0,0,.35);}
+  .card.lead{border-color:rgba(37,217,140,.55);box-shadow:0 0 0 1px rgba(37,217,140,.25),0 18px 44px rgba(37,217,140,.10);}
+  .card.lead::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--green),transparent);}
+  .rank{position:absolute;top:20px;right:22px;font-family:'Sora';font-weight:800;font-size:34px;color:rgba(255,255,255,.06);line-height:1;}
+  .name{font-family:'Sora';font-weight:700;font-size:21px;letter-spacing:-.3px;}
+  .role{font-size:12px;color:var(--muted2);margin-top:4px;line-height:1.45;max-width:88%;}
+  .badges{display:flex;gap:7px;margin:15px 0 12px;flex-wrap:wrap;}
+  .badge{font-size:12px;font-weight:700;padding:5px 11px;border-radius:999px;font-family:'Inter';}
+  .b-score{background:var(--green);color:#06110c;}
+  .b-rate{background:transparent;color:var(--green);border:1px solid rgba(37,217,140,.4);}
+  .b-tag{background:rgba(227,176,75,.14);color:var(--gold);border:1px solid rgba(227,176,75,.3);}
+  .oneliner{font-size:14px;color:var(--ink);margin:2px 0 12px;line-height:1.5;}
+  .resolve{font-size:12.5px;color:var(--ink);background:rgba(37,217,140,.07);border:1px solid rgba(37,217,140,.18);
+           border-left:3px solid var(--green);padding:9px 11px;border-radius:0 8px 8px 0;margin-bottom:16px;}
+  .resolve b{color:var(--green);font-weight:700;}
+  .links{display:flex;flex-direction:column;gap:8px;margin-top:auto;}
+  a.lnk{display:flex;align-items:center;gap:11px;text-decoration:none;font-size:13px;font-weight:600;color:var(--ink);
+        background:rgba(255,255,255,.025);border:1px solid var(--line);border-radius:11px;padding:10px 12px;transition:all .12s;}
+  a.lnk:hover{border-color:var(--green);background:rgba(37,217,140,.08);}
+  a.lnk .ic{width:24px;height:24px;border-radius:7px;display:grid;place-items:center;font-size:11px;font-weight:800;color:#06110c;flex:0 0 auto;}
+  .ic-cv{background:var(--violet);color:#fff;}.ic-scr{background:var(--red);color:#fff;}.ic-prj{background:var(--blue);color:#fff;}
+  .ic-deb{background:var(--amber);}.ic-rep{background:var(--green);}
+  a.lnk .arr{margin-left:auto;color:var(--muted2);font-size:17px;font-weight:400;}
+  a.lnk:hover .arr{color:var(--green);}
+  .note{font-size:11px;color:var(--muted2);margin-top:13px;font-style:italic;}
+
+  .legend{margin-top:30px;font-size:12px;color:var(--muted2);border-top:1px solid var(--line);padding-top:16px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+  .legend b{color:var(--muted);}
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="wrap">
+    <div class="brand">
+      <div class="logo">P</div>
+      <div class="nm">Profitable<span>Media</span></div>
+    </div>
+    <div class="kicker">Hiring &middot; Growth (GTM) Role</div>
+    <h1>Growth (GTM) <em>Finalists</em></h1>
+    <div class="sub">All three cleared the paid project and a debrief. Each is a strategist <em style="color:var(--green);font-style:normal">and</em> hands-on executor, a solo operator, and has accepted comp. Direct CV access lives inside each Manatal profile. Click any tile to open.</div>
+    <div class="meta">
+      <span class="chip">Updated <b>20 Jul 2026</b></span>
+      <span class="chip">Owner <b>Bogdan</b></span>
+      <span class="chip">Next <b>Final interviews with Dylan</b></span>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="grid">
+
+    <!-- MARCELO -->
+    <div class="card lead">
+      <div class="rank">01</div>
+      <div class="name">Marcelo Birolli</div>
+      <div class="role">Ex-founder &middot; info-product agency 0 to $10M &middot; Home for Her affiliate &middot; Red Bull</div>
+      <div class="badges">
+        <span class="badge b-score">9.5 / 10</span>
+        <span class="badge b-rate">$40&ndash;45 / hr</span>
+        <span class="badge b-tag">Top ceiling</span>
+      </div>
+      <div class="oneliner">Sharpest strategist and hands-on executor. Best pure role-fit, strongest project of the three.</div>
+      <div class="resolve"><b>Resolve:</b> how big can he build the partner engine, and his real 30-day plan and numbers.</div>
+      <div class="links">
+        <a class="lnk" href="https://app.manatal.com/jobs/2954804?tab=candidates" target="_blank"><span class="ic ic-cv">CV</span>Manatal profile &amp; CV<span class="arr">&rsaquo;</span></a>
+        <a class="lnk" href="https://fathom.video/share/a1_5xyfBKr-9G5viSD99m1DJ43JyExCQ" target="_blank"><span class="ic ic-scr">S</span>Screening call<span class="arr">&rsaquo;</span></a>
+        <a class="lnk" href="https://docs.google.com/document/d/1qq9r43j5PUh2WF5DO_-wEhpCLRGFd_YDNHh0qwkorus/edit?tab=t.0" target="_blank"><span class="ic ic-prj">P</span>Hiring project<span class="arr">&rsaquo;</span></a>
+        <a class="lnk" href="https://fathom.video/share/u4xqeEbsd1XM4BYVzmoEAhdhxVMnVaRH" target="_blank"><span class="ic ic-deb">D</span>Project debrief<span class="arr">&rsaquo;</span></a>
+        <a class="lnk" href="https://docs.google.com/document/d/1G7h2cD4ypIA-LUSmoHs4NTyLpMqqegYRLDpbS1gI2gI/edit?usp=sharing" target="_blank"><span class="ic ic-rep">R</span>Hiring report<span class="arr">&rsaquo;</span></a>
+      </div>
+    </div>
+
+    <!-- RITVARS -->
+    <div class="card">
+      <div class="rank">02</div>
+      <div class="name">Ritvars Lauza</div>
+      <div class="role">7 yrs Head of Growth at Sellfy &middot; built affiliate motion &middot; deepest ICP</div>
+      <div class="badges">
+        <span class="badge b-score">9 / 10</span>
+        <span class="badge b-rate">$45 / hr</span>
+        <span class="badge b-tag">Most stable</span>
+      </div>
+      <div class="oneliner">Elite strategist and executor, real DR ecosystem ties. SEO-drift fear now low after debrief.</div>
+      <div class="resolve"><b>Resolve:</b> his concrete Monday plan and named accounts, and does the timezone work day to day.</div>
+      <div class="links">
+        <a class="lnk" href="https://app.manatal.com/candidates/157238460?tab=notes" target="_blank"><span class="ic ic-cv">CV</span>Manatal profile &amp; CV<span class="arr">&rsaquo;</span></a>
+        <a class="lnk" href="https://fathom.video/share/afWH3WXs6HBVnQYLwz-1ECSg5oAJtGRS" target="_blank"><span class="ic ic-scr">S</span>Screening call<span class="arr">&rsaquo;</span></a>
+        <a class="lnk" href="https://drive.google.com/drive/home" target="_blank"><span class="ic ic-prj">P</span>Hiring project<span class="arr">&rsaquo;</span></a>
+        <a class="lnk" href="https://fathom.video/share/tesNyYsyUajqmYzyU7PWtYeuZ1PXQeGE" target="_blank"><span class="ic ic-deb">D</span>Project debrief<span class="arr">&rsaquo;</span></a>
+        <a class="lnk" href="https://docs.google.com/document/d/16jq6XGPbkf83HATw06V68mXem0SX7r3AmrUPWcPBowU/edit?usp=sharing" target="_blank"><span class="ic ic-rep">R</span>Hiring report<span class="arr">&rsaquo;</span></a>
+      </div>
+      <div class="note">Project link points to Drive home; swap for the exact file when handy.</div>
+    </div>
+
+    <!-- MARLON -->
+    <div class="card">
+      <div class="rank">03</div>
+      <div class="name">Marlon Pohl</div>
+      <div class="role">All-round growth + sales/RevOps &middot; ex-PurpleFire &middot; n8n, Clay &middot; native English</div>
+      <div class="badges">
+        <span class="badge b-score">9 / 10</span>
+        <span class="badge b-rate">$25&ndash;35 / hr</span>
+        <span class="badge b-tag">Best value</span>
+      </div>
+      <div class="oneliner">Strong strategist and the strongest hands-on executor, best value. Real named partner engine.</div>
+      <div class="resolve"><b>Resolve:</b> the revenue his partner motion has driven, and his way into the rooms.</div>
+      <div class="links">
+        <a class="lnk" href="https://app.manatal.com/candidates/156936396?tab=notes" target="_blank"><span class="ic ic-cv">CV</span>Manatal profile &amp; CV<span class="arr">&rsaquo;</span></a>
+        <a class="lnk" href="https://fathom.video/share/GyTVPao3nSMjGqjuf5GszGfsEvrW9HxV" target="_blank"><span class="ic ic-scr">S</span>Screening call<span class="arr">&rsaquo;</span></a>
+        <a class="lnk" href="https://docs.google.com/document/d/1LRKVYepejDeHfAEYCB1d8bAybq8P-cWd/edit" target="_blank"><span class="ic ic-prj">P</span>Hiring project<span class="arr">&rsaquo;</span></a>
+        <a class="lnk" href="https://fathom.video/share/Z7Wdwe3u_jQRxMissVoq3yTWQsP3gb2Z" target="_blank"><span class="ic ic-deb">D</span>Project debrief<span class="arr">&rsaquo;</span></a>
+        <a class="lnk" href="https://docs.google.com/document/d/1BRD5ilf8LSeM_A5Qj-UjxUFKwi0R054JCFd4GvBxDFg/edit?usp=sharing" target="_blank"><span class="ic ic-rep">R</span>Hiring report<span class="arr">&rsaquo;</span></a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="legend">
+    <span><b>Tiles:</b> CV = Manatal (direct CV inside) &middot; S = Screening call &middot; P = Hiring project &middot; D = Project debrief &middot; R = Hiring report</span>
+    <span>Profitable Media &middot; Internal hiring</span>
+  </div>
+</div>
+</body>
+</html>
